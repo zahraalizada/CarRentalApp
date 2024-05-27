@@ -20,6 +20,9 @@ class LoginController: UIViewController {
 
     @IBAction func loginTappedButton(_ sender: Any) {
         UserDefaults.standard.setValue(true, forKey: "userRegistered")
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            sceneDelegate.didHomeController()
+        }
     }
     
 }
